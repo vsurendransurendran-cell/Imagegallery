@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive image gallery built with HTML, CSS, and JavaScript.">
+  <title>Frame | Image Gallery</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Frame home"><span class="brand-mark">F</span> frame<span class="brand-dot">.</span></a>
+    <span class="header-note">A little collection of beautiful things</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro">
+      <p class="eyebrow"><span class="eyebrow-line"></span> THE VISUAL JOURNAL</p>
+      <h1>Moments worth<br><span>looking at.</span></h1>
+      <p class="intro-copy">A curated collection of places, details, and quiet little wonders from around the world.</p>
+      <div class="intro-meta"><span class="live-dot"></span><span id="photo-count">12 photographs</span><span class="meta-divider">/</span><span>Updated for your eyes</span></div>
+    </section>
+
+    <section class="gallery-section" aria-label="Photo gallery">
+      <div class="gallery-toolbar">
+        <div class="filter-list" role="group" aria-label="Filter photographs by category">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All frames <span>12</span></button>
+          <button class="filter-btn" type="button" data-filter="nature" aria-pressed="false">Nature</button>
+          <button class="filter-btn" type="button" data-filter="architecture" aria-pressed="false">Architecture</button>
+          <button class="filter-btn" type="button" data-filter="travel" aria-pressed="false">Travel</button>
+          <button class="filter-btn" type="button" data-filter="details" aria-pressed="false">Little details</button>
+        </div>
+        <label class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="search-input" type="search" placeholder="Find a frame..." aria-label="Search photographs">
+        </label>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span class="empty-icon">⌕</span>
+        <h2>No frames found</h2>
+        <p>Try another search or category.</p>
+        <button class="reset-btn" id="reset-btn" type="button">Show all photos</button>
+      </div>
+      <div class="gallery-footer"><span>END OF THE ROLL</span><span>Made to be explored ↗</span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>FRAME <span class="brand-dot">.</span> PHOTO JOURNAL</span>
+    <span>Built with HTML, CSS & JavaScript</span>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close image viewer">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">←</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-image" src="" alt="">
+      <figcaption>
+        <div><p class="lightbox-category" id="lightbox-category"></p><h2 id="lightbox-title"></h2></div>
+        <span class="lightbox-counter" id="lightbox-counter"></span>
+      </figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" type="button" aria-label="Next image">→</button>
+    <p class="keyboard-hint">TIP: USE ← → TO NAVIGATE · ESC TO CLOSE</p>
+  </div>
+</body>
+</html>
